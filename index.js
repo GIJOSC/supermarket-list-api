@@ -34,6 +34,28 @@ app.post("/list-item", async (req, res) => {
   return res.json(newItems);
 });
 
+app.delete("/list-item/:id", async (req, res) => {
+  const id = req.params.id;
+  const listItemDeleted = await ListItem.findByIdAndDelete(id);
+  return res.json(listItemDeleted);
+});
+
+app.put("/list-item/:id", async (req, res) => {
+  const id = req.params.id;
+  const listItemUpdated = await ListItem.findByIdAndUpdate(
+    id,
+    {
+      name: req.body.name,
+      quantity: req.body.quantity,
+      checked: req.body.checked,
+    },
+    {
+      new: true,
+    }
+  );
+  return res.json(listItemUpdated);
+});
+
 app.listen(port, () => {
   connectDatabase().catch((error) => {
     console.log(`Error connecting database: ${error}`);
