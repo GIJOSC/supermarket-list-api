@@ -6,7 +6,6 @@ const app = express();
 app.use(express.json());
 
 const port = Number(process.env.PORT) || 3333;
-console.log({ port, db: process.env.DATABASE_URL });
 
 async function connectDatabase() {
   await mongoose.connect(process.env.DATABASE_URL);
