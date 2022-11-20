@@ -1,3 +1,5 @@
+![Logo SevenApp](https://user-images.githubusercontent.com/31870513/201943449-dd8fcb2e-db59-4158-9a1a-04088bdbe5b1.svg)
+
 ## Supermarket List Api
 
 API in Node.js using Express and Mongoose to connect a MongoDB Database
